@@ -14,7 +14,7 @@
         integrity="sha384-..." crossorigin="anonymous">
     <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/dripicons/2.0.0/webfont.min.css' />
 
-    <link href="css/style.css" rel="styleSheet">
+    <link href="../../css/style.css" rel="styleSheet">
     <!-- <link href="css/English_style.css" rel="styleSheet"> -->
    <style>
     body {
@@ -37,6 +37,7 @@
         display: flex;
         flex-direction: column;
         min-height: 0;
+        align-items: center;
     }
 
     .section-mainCard {
@@ -51,7 +52,7 @@
         display: flex;
         flex-direction: column;
         min-height: 0;
-        max-height: 95%; /* Constrain height */
+        max-height: 95%;
     }
 
     .content-row {
@@ -59,10 +60,9 @@
         display: flex;
         flex-direction: column;
         min-height: 0;
-        overflow-y: auto; /* Allow scrolling only when needed */
+        overflow-y: visible; 
     }
 
-    /* Ensure the form takes full available height */
     form {
         flex: 1;
         display: flex;
@@ -76,13 +76,14 @@
         flex-direction: column;
         min-height: 0;
     }
-
-    /* Media query for iPad and larger screens */
-    @media (min-width: 768px) {
-        .content-row {
-            overflow-y: visible; /* Remove scroll on larger screens */
+     .form-card{
+        height: 100%;
+     }
+     @media(max-width:576px) {
+        .form-card{
+            height: 70vh;
         }
-    }
+     }
 </style>
 </head>
 
@@ -99,9 +100,8 @@
                 </nav>
             </div>
         </header>
-        <main class=" main-container container-fluid" style="height: auto;">
-            <section class="section-mainCard">
-                <div class="row justify-content-center w-100 h-100">
+        <main class="main-container container-fluid" style="height: auto;">
+             <div class="row justify-content-center w-100 h-100">
                     <div class="col-xl-10 text-center">
                         <div class="card main-card ">
                             <div class="col-md-12">
@@ -119,14 +119,13 @@
                             </div>
                             <div class="col-md-12" style="flex: 1;min-height: 0;">
                                 <div class="row justify-content-center h-100 content-row">
-                                    <div class="col-md-11 h-100 d-flex">
-                                        <form>
-                                            <fieldset>
-                                                <div class="form-card  px-lg-5 py-lg-5 feed-card" style="height: 100%;">
+                                       <div class="col-md-11 h-100 d-flex">
+                                        <form class="d-flex align-items-center w-100">
+                                            <fieldset class="w-100">
+                                                <div class="form-card  px-lg-4 py-lg-4 ">
                                                     <div class="row data-row">
                                                         <div class="col-auto">
                                                             <p id="feed-number"> رقم التغذية </p>
-
                                                         </div>
                                                         <div class="col-auto personal-data">
                                                             <p> 23-1-62-5001-000003</p>
@@ -163,16 +162,14 @@
 
                                                         </div>
                                                     </div>
-                                                    <div class="row data-row align-items-center">
+                                                   <div class="row align-items-center flex-row-reverse" >
                                                         <div class="col-auto">
-                                                            <p id="notes" class="mb-lg-0">ملاحظات</p>
+                                                            <label id="notes" class="mb-lg-0">الملاحظات</label>
                                                         </div>
-                                                        <div class="col d-flex justify-content-end">
-                                                            <textarea class="form-control textarea-inputs"
-                                                                id="exampleFormControlTextarea1" rows="1"
-                                                                maxlength="100" name="feed_notes"></textarea>
+                                                        <div class="col d-flex justify-content-end ">
+                                                            <textarea class="form-control textarea-inputs" rows="1"
+                                                                maxlength="100" name="notes"></textarea>
                                                         </div>
-
                                                     </div>
                                                     <div class="row data-row text-end">
                                                         <div class="col-md-6">
@@ -180,7 +177,6 @@
                                                                 رفض تغذية الصندوق الخاص بك بالفرع الحالي</p>
                                                         </div>
                                                     </div>
-
                                                 </div>
 
                                                 <div class="row w-100 py-2 g-2 " style="min-height: 61px;">
@@ -195,16 +191,14 @@
                                                     </div>
                                                 </div>
                                             </fieldset>
-                                        </form>
 
-                                    </div>
+                                        </form>
+                                      </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-            </section>
         </main>
         <footer class="fixed-bottom-xl">
             <div class="before-footer-widget">
